@@ -1,0 +1,165 @@
+/*FONTE*/
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+/*CONFIG*/
+* {
+    font-family: sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #18181b;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*BACKGROUD ANIMAÇÃO*/
+.containe-bolhas {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bolhas {
+    position: absolute;
+    display: flex;
+}
+
+.bolhas span {
+    width: 30px;
+    height: 30px;
+    background: #e5ff00;
+    margin: 0 4px;
+    border-radius: 50px;
+    box-shadow: 0 0 0 10px #e5ff0044,
+    0 0 50px #e5ff00,
+    0 0 100px #e5ff00;
+    animation: animar calc(150s / var(--i)) linear infinite;
+}
+
+@keyframes animar {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+.bolhas span:nth-of-type(even) {
+    background: #2dc3ff;
+    box-shadow: 0 0 0 10px #2dc3ff44,
+    0 0 50px #2dc3ff,
+    0 0 100px #2dc3ff;
+}
+/*END BACKGROUD ANIMAÇÃO*/
+
+h1 {
+    max-width: 420px;
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.container-input {
+    max-width: 400px;
+    margin: 14px 0px;
+}
+
+.container-input span {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    border-radius: 5px;
+    height: 18px;
+    outline: none;
+    margin-top: 8px;
+}
+
+.button-cta {
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3eb72b;
+    cursor: pointer;
+    margin-top: 25px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.button-cta:hover {
+    background-color: #329123;
+}
+
+.container-password {
+    max-width: 400px;
+    margin: 14px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 22px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.password {
+   height: 60px; 
+   background-color: rgba(0, 0, 0, 0.30);
+   border-radius: 4px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #ffffff;
+   border: 1px solid #313131;
+   transition: transform 0.5s;
+}
+
+.password:hover {
+    transform: scale(1.05);
+}
+
+.tooltip {
+    color: #ffffff;
+    position: relative;
+    top: 20px;
+    padding: 6px 8px;
+    background: rgb(15, 15, 15);
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.hide {
+    display: none;
+}
+
+.container-password:hover .tooltip {
+    visibility: visible;
+    bottom: 50px;
+    opacity: 1;
+}
